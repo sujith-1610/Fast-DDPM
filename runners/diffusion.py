@@ -269,7 +269,7 @@ class Diffusion(object):
 
         start_epoch, step = 0, 0
         if self.args.resume_training:
-            states = torch.load(os.path.join(self.args.log_path, "logs/pet_train_model.pth/ckpt_100.pth"))
+            states = torch.load(os.path.join(self.args.log_path, "/kaggle/working/exp/logs/Fast-DDPM_experiments/ckpt_200.pth"))
             print(f"✅ Loading checkpoint from latest_checkpoint")
             model.load_state_dict(states[0])
 
