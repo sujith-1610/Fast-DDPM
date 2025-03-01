@@ -271,13 +271,13 @@ class Diffusion(object):
         if self.args.resume_training:
             states = torch.load(os.path.join(self.args.log_path, "logs/pet_train_model.pth/ckpt_100.pth"))
             print(f"✅ Loading checkpoint from latest_checkpoint")
-            print(f"✅ Resumed training from Epoch {start_epoch}, Step {step}")
             model.load_state_dict(states[0])
 
             states[1]["param_groups"][0]["eps"] = self.config.optim.eps
             optimizer.load_state_dict(states[1])
             start_epoch = states[2]
             step = states[3]
+            print(f"✅ Resumed training from Epoch {start_epoch}, Step {step}")
             if self.config.model.ema:
                 ema_helper.load_state_dict(states[4])
 
