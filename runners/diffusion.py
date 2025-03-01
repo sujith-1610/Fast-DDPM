@@ -269,7 +269,7 @@ class Diffusion(object):
 
         start_epoch, step = 0, 0
         if self.args.resume_training:
-            states = torch.load(os.path.join(self.args.log_path, "ckpt.pth"))
+            states = torch.load(os.path.join(self.args.log_path, "logs/pet_train_model.pth/ckpt_100.pth"))
             model.load_state_dict(states[0])
 
             states[1]["param_groups"][0]["eps"] = self.config.optim.eps
