@@ -132,7 +132,7 @@ def parse_args_and_config():
             raise ValueError("Level {} not supported".format(args.verbose))
 
         handler1 = logging.StreamHandler()
-        handler2 = logging.FileHandler(os.path.join(args.log_path, "/kaggle/input/ckpt-10000/stdout.txt"))
+        handler2 = logging.FileHandler(os.path.join(args.log_path, "stdout.txt"))
         formatter = logging.Formatter(
             "%(levelname)s - %(filename)s - %(asctime)s - %(message)s"
         )
